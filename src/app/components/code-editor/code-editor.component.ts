@@ -41,6 +41,7 @@ export class CodeEditorComponent {
     this.progressRef = this.progress.ref('myProgress');
   }
   async submitCode() {
+    this.timeComplexity = '';
     this.progressRef.start();
     const aceEditor = ace.edit(this.editor.nativeElement);
     const response = await this.codeFormService.getTimeComplexity(
