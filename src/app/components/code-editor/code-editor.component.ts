@@ -52,4 +52,11 @@ export class CodeEditorComponent {
     console.log(response);
     this.timeComplexity = response;
   }
+  resetCode() {
+    this.timeComplexity = '';
+    const aceEditor = ace.edit(this.editor.nativeElement);
+    aceEditor.session.setValue(
+      'def foo(n, k):\naccum = 0\nfor i in range(n):\n    for l in range(k):\n        accum += i\nreturn accum\n'
+    );
+  }
 }

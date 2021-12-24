@@ -9,6 +9,7 @@ import { CodeEditorComponent } from './components/code-editor/code-editor.compon
 import { NavigationbarComponent } from './components/navigationbar/navigationbar.component';
 import { NgProgressModule } from 'ngx-progressbar';
 import { HttpClientModule } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [AppComponent, CodeEditorComponent, NavigationbarComponent],
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
     NgProgressModule.withConfig({
       thick: true,
       color: '#3f51b5',

@@ -1,12 +1,25 @@
-<div class="app-ace-editor item" #editor style="width: 70%; height: 50%"></div>
-<button
-  class="editorButton"
-  mat-flat-button
-  color="primary"
-  style="margin-top: 25px"
-  (click)="submitCode()"
->
-  Get Time Complexity
-</button>
-<h1 class="apiResponse" *ngIf="timeComplexity">{{ timeComplexity }}</h1>
+<div class="app-ace-editor item" #editor style="width: 100%; height: 50%"></div>
 <ng-progress id="myProgress"></ng-progress>
+
+<div fxLayout="row" fxLayoutAlign="end center">
+  <button
+    style="margin-top: -70px; margin-right: 15px"
+    color="primary"
+    mat-flat-button
+    (click)="submitCode()"
+  >
+    Calculate Time Complexity
+  </button>
+
+  <button
+    style="margin-top: -70px; margin-right: 15px"
+    color="warn"
+    mat-flat-button
+    (click)="resetCode()"
+  >
+    Reset
+  </button>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center">
+  <h1 class="apiResponse" *ngIf="timeComplexity">{{ timeComplexity }}</h1>
+</div>
