@@ -46,4 +46,4 @@ testem.log
 Thumbs.db
 
 # keys and whatnot
-src\environments
+./src/environments
