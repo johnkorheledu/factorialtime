@@ -14,12 +14,16 @@ const openai = new OpenAI(OPENAI_API_KEY);
 export class CodeFormService {
   async getTimeComplexity(code: any) {
     const formattedPrompt =
-      code + '\n' + '"""' + '\n' + 'The time complexity of this function is';
+      code.replace(/\s+/g, '') +
+      '\n' +
+      '"""' +
+      '\n' +
+      'The time complexity of this function is';
     console.log(formattedPrompt);
     const gptResponse = await openai.complete({
       engine: 'davinci',
       prompt: formattedPrompt,
-      maxTokens: 64,
+      maxTokens: 50,
       temperature: 0,
       topP: 1.0,
       presencePenalty: 0.0,
@@ -31,6 +35,7 @@ export class CodeFormService {
     });
     // console.log(code);
     // console.log(gptResponse.data.choices[0].text);
+    console.log(gptResponse.data);
     return gptResponse.data.choices[0].text;
   }
   constructor() {}
